@@ -23,6 +23,7 @@
         <target.jvm.version>11</target.jvm.version>
         <main.package>com.nikitatomilov.ktfxtemplate</main.package>
         <main.class>com.nikitatomilov.ktfxtemplate.Application</main.class>
+        <jarfile.prefix>${artifactId}-${version}</jarfile.prefix>
     </properties>
 
     <dependencies>
@@ -173,6 +174,8 @@
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <finalName>${jarfile.prefix}-fatjar</finalName>
                         </configuration>
                     </execution>
                 </executions>

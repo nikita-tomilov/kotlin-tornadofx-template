@@ -30,34 +30,19 @@ Note that this fat jar will require a JavaFX-bundled JDK
 (for example, Azul builds: https://www.azul.com/downloads/?version=java-11-lts&package=jdk-fx)
 or manual fiddling with JavaFX SDK:
 ```
-$ /usr/lib/jvm/java-11-openjdk-amd64/bin/java -jar kotlin-tornadofx-template-1.0-SNAPSHOT-jar-with-dependencies.jar
+$ /usr/lib/jvm/java-11-openjdk-amd64/bin/java -jar kotlin-tornadofx-template-1.0-SNAPSHOT-fatjar.jar
 Error: JavaFX runtime components are missing, and are required to run this application
 $ echo $?
 1
-$ /opt/zulu11.48.21-ca-fx-jdk11.0.11-linux_x64/bin/java -jar kotlin-tornadofx-template-1.0-SNAPSHOT-jar-with-dependencies.jar
+$ /opt/zulu11.48.21-ca-fx-jdk11.0.11-linux_x64/bin/java -jar kotlin-tornadofx-template-1.0-SNAPSHOT-fatjar.jar
 $ echo $?
 0
 ```
-1. Jlink build
-```
-mvn clean javafx:jlink
-```
-This will essentially create a zip archive containing a stripped down JRE with bundled JavaFX,
-as well as your code. The archive will be in ```target/ktfxtemplate.zip```, and its contents will be
-in ```target/ktfxtemplate``` folder.
 
 ## How to run it?
 0. Via importing the project to IntelliJ IDEA
-1. Via building and running jar file, as shown above
-2. Via building and running jlink image
-```
-$ mvn javafx:jlink
-$ cd target/ktfxtemplate
-$ ./bin/ktfxtemplate
-$ echo $?
-0
-```
-3. Via OpenJFX Maven plugin:
+1. Via building and running fat jar file, as shown above
+2. Via OpenJFX Maven plugin:
 ```
 mvn javafx:run
 ```
