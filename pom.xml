@@ -5,7 +5,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.programmer74</groupId>
+    <groupId>com.nikitatomilov</groupId>
     <artifactId>kotlin-tornadofx-template</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>kotlin-tornadofx-template</name>
@@ -15,13 +15,14 @@
         <kotlin.version>1.5.10</kotlin.version>
         <javafx.version>11.0.2</javafx.version>
         <javafx.mvn.version>0.0.6</javafx.mvn.version>
+        <tornadofx.version>1.7.20</tornadofx.version>
         <slf4j.version>1.7.30</slf4j.version>
         <kotlin.logging.version>1.12.5</kotlin.logging.version>
         <junit.version>5.8.2</junit.version>
         <assertj.version>3.19.0</assertj.version>
         <target.jvm.version>11</target.jvm.version>
-        <main.package>com.programmer74.ktfxtemplate</main.package>
-        <main.class>com.programmer74.ktfxtemplate.HelloApplication</main.class>
+        <main.package>com.nikitatomilov.ktfxtemplate</main.package>
+        <main.class>com.nikitatomilov.ktfxtemplate.Application</main.class>
     </properties>
 
     <dependencies>
@@ -45,6 +46,12 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>${javafx.version}</version>
+        </dependency>
+        <!-- tornadofx just for lulz -->
+        <dependency>
+            <groupId>no.tornado</groupId>
+            <artifactId>tornadofx</artifactId>
+            <version>${tornadofx.version}</version>
         </dependency>
         <!-- kotlin -->
         <dependency>

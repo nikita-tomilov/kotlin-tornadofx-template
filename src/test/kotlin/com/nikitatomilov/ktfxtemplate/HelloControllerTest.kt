@@ -1,4 +1,4 @@
-package com.programmer74.ktfxtemplate
+package com.nikitatomilov.ktfxtemplate
 
 import mu.KLogging
 import org.assertj.core.api.Assertions.assertThat
