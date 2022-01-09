@@ -1,9 +1,16 @@
 package com.nikitatomilov.ktfxtemplate
 
+import com.nikitatomilov.ktfxtemplate.view.FontFixStyle
 import com.nikitatomilov.ktfxtemplate.view.FxmlView
 import tornadofx.App
+import tornadofx.reloadStylesheetsOnFocus
 
-class LaunchableApp : App(FxmlView::class) {
+class LaunchableApp : App(FxmlView::class, FontFixStyle::class) {
+
+  init {
+    reloadStylesheetsOnFocus()
+  }
+
   companion object {
     @JvmStatic
     fun start(args: Array<String>) {

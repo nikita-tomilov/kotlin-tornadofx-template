@@ -22,25 +22,37 @@ https://github.com/nikita-tomilov/kotlin-javafx-graalvm.
 
 ## What are the building options?
 0. Plain fat jar build
-```
+```shell
 mvn clean package
 ```
-Note that this fat jar shall contain all DLLs/SOs for Win/Lin/Mac, but
-it may still require a JavaFX-bundled JDK 
+Note that this fat jar, even though having JavaFX packages, may still require a JavaFX-bundled JDK 
 (for example, Azul builds: https://www.azul.com/downloads/?version=java-11-lts&package=jdk-fx)
 or manual fiddling with JavaFX SDK.
-
 However, on my machine it works with simple OpenJDK 11 packaged by Ubuntu maintainers.
-```
-$ /usr/lib/jvm/java-11-openjdk-amd64/bin/java -jar target/kotlin-tornadofx-template-1.0-SNAPSHOT-fatjar.jar $ echo $?
+```shell
+$ /usr/lib/jvm/java-11-openjdk-amd64/bin/java -jar target/kotlin-tornadofx-template-1.0-SNAPSHOT-fatjar.jar
 $ echo $?
 0
 ```
 
+1. Cross-platform far jar build 
+```shell
+mvn clean package -PcrossPlatformUberJar
+``` 
+This shall contain all DLLs/SOs for Win/Lin/Mac.
+```shell
+$ /usr/lib/jvm/java-11-openjdk-amd64/bin/java -jar target/kotlin-tornadofx-template-1.0-SNAPSHOT-crossplatformjar.jar
+$ echo $?
+0
+```
+
+Size difference on my machine between these jars is minor (a couple kilobytes).
+
 ## How to run it?
 0. Via importing the project to IntelliJ IDEA
 1. Via building and running fat jar file, as shown above
-2. Via OpenJFX Maven plugin:
+2. Via building and running cross-platform jar file, as shown above
+3. Via OpenJFX Maven plugin:
 ```
 mvn javafx:run
 ```

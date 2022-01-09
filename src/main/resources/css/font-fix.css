@@ -1,0 +1,4 @@
+*, .messagebox {
+    -fx-font-family: Arial, serif;
+    -fx-background-color: #f9d900;
+}
