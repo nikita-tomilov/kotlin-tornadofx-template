@@ -5,7 +5,7 @@ import com.nikitatomilov.ktfxtemplate.util.MessageBoxes
 import javafx.beans.property.SimpleStringProperty
 import tornadofx.*
 
-class TornadoFXView : View() {
+class TornadoFXView : View("TornadoFXViewTitle") {
   private val controller: TornadoFXController by inject()
   private val input = SimpleStringProperty()
 

@@ -12,15 +12,15 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.version>1.5.10</kotlin.version>
-        <javafx.version>11.0.2</javafx.version>
-        <javafx.mvn.version>0.0.6</javafx.mvn.version>
+        <kotlin.version>1.7.10</kotlin.version>
+        <javafx.version>17.0.6</javafx.version>
+        <javafx.mvn.version>0.0.8</javafx.mvn.version>
         <tornadofx.version>1.7.20</tornadofx.version>
         <slf4j.version>1.7.30</slf4j.version>
         <kotlin.logging.version>1.12.5</kotlin.logging.version>
         <junit.version>5.8.2</junit.version>
         <assertj.version>3.19.0</assertj.version>
-        <target.jvm.version>11</target.jvm.version>
+        <target.jvm.version>17</target.jvm.version>
         <main.package>com.nikitatomilov.ktfxtemplate</main.package>
         <main.class>com.nikitatomilov.ktfxtemplate.Application</main.class>
         <jarfile.prefix>${artifactId}-${version}</jarfile.prefix>
@@ -149,7 +149,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
+                <version>3.0.0</version>
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>

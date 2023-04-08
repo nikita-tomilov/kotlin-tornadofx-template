@@ -5,7 +5,7 @@ import javafx.scene.control.Label
 import javafx.scene.layout.VBox
 import tornadofx.View
 
-class FxmlView : View() {
+class FxmlView : View("FxmlViewTitle") {
   override val root: VBox by fxml("/fxml/fxmlview.fxml")
 
   private val welcomeText: Label by fxid()

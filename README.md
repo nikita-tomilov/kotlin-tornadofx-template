@@ -6,8 +6,10 @@ This is an example of how to work with JavaFX/TornadoFX on Kotlin with target JV
 
 Shall support OpenJDK 11 or any other 11-compatible JDK, e.g. GraalVM 21.
 
+In my experience, it also shall support OpenJDK 17 or any other 17-compatible JDK, even though
+TornadoFX specifically mentions that it does not support JDK 9/10.
+
 Downgrading to JDK 8 may work, but I have not tested it.
-Upgrading to JDK 17 may also work, but I have not tested it either.
 
 Building to native image with GraalVM/GluonFX shall also work, if modified accordingly. See
 official docs https://docs.gluonhq.com/ or my (not-well-documented) example 
@@ -30,7 +32,7 @@ Note that this fat jar, even though having JavaFX packages, may still require a 
 or manual fiddling with JavaFX SDK.
 However, on my machine it works with simple OpenJDK 11 packaged by Ubuntu maintainers.
 ```shell
-$ /usr/lib/jvm/java-11-openjdk-amd64/bin/java -jar target/kotlin-tornadofx-template-1.0-SNAPSHOT-fatjar.jar
+$ /usr/lib/jvm/java-17-openjdk-amd64/bin/java -jar target/kotlin-tornadofx-template-1.0-SNAPSHOT-fatjar.jar
 $ echo $?
 0
 ```
@@ -41,7 +43,7 @@ mvn clean package -PcrossPlatformUberJar
 ``` 
 This shall contain all DLLs/SOs for Win/Lin/Mac.
 ```shell
-$ /usr/lib/jvm/java-11-openjdk-amd64/bin/java -jar target/kotlin-tornadofx-template-1.0-SNAPSHOT-crossplatformjar.jar
+$ /usr/lib/jvm/java-17-openjdk-amd64/bin/java -jar target/kotlin-tornadofx-template-1.0-SNAPSHOT-crossplatformjar.jar
 $ echo $?
 0
 ```
